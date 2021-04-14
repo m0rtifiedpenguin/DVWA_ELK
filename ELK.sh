@@ -13,19 +13,22 @@ fi
 apt-get update
 # Upgrading
 apt-get upgrade
-# Install docker to box 
+# Installing Docker IO
 apt install docker.io &&
-# Install python
+# Installing Python
 apt install python3-pip &&
-# Installs docker python module
+# Installing Docker Python module
 apt install docker &&
-# Increase virtual memory
+# Increasing virtual memory
 sysctl -w vm.max_map_count=262144 &&
-# Start docker
+# Starting Docker for first time and setting to autostart
 systemctl start docker &&
 systemctl enable docker.service &&
 systemctl enable containerd.service &&
-# Pull docker elk
+# Using Docker, pull elk
 docker pull sebp/elk &&
-# Create Image
+# Invoking Docker, Telling it to Run, 
+# i =  Keep STDIN open even if not attached
+# t = Allocate a pseudo-tty
+# Always start Docker Container
 docker run -it -p 5601:5601 -p 9200:9200 -p 5044:5044 --restart always sebp/elk
