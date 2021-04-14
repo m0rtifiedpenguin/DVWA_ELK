@@ -14,19 +14,19 @@ apt-get update
 # Upgrading
 apt-get upgrade
 # Installing Docker IO
-apt install docker.io
+apt install docker.io &&
 # Installing Python
-apt install python3-pip
-# Installing Docker
-apt install docker
-# Start docker for first time and set to autostart
-systemctl start docker
-systemctl enable docker.service
-systemctl enable containerd.service
+apt install python3-pip &&
+# Installing Docker Python module
+apt install docker &&
+# Starting Docker for first time and setting to autostart
+systemctl start docker &&
+systemctl enable docker.service &&
+systemctl enable containerd.service &&
 # Using docker, pull DVWA
-docker pull vulnerables/web-dvwa
+docker pull vulnerables/web-dvwa &&
 # Invoking Docker, Telling it to Run, 
-#i =  Keep STDIN open even if not attached
-#t = Allocate a pseudo-tty
+# i =  Keep STDIN open even if not attached
+# t = Allocate a pseudo-tty
 # Always start Docker Container
 docker run -it -p 80:80 --restart always vulnerables/web-dvwa
