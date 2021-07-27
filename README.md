@@ -1,2 +1,2 @@
 # DVWA_ELK
-DVWA_ELK is an Azure based project building a pair of load balanced web servers that host a DVWA site, as well as building a separate server to handle an ELK stack to process information from the DVWA servers.
+Microsoft Azure based project using Docker to configure an ELK server and a pair load balanced DVWA web servers. The ELK server was used to monitor traffic to the web servers.
